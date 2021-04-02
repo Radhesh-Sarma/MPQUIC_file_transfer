@@ -42,9 +42,11 @@ func GenerateTLSConfig() *tls.Config{
 }
 
 func main(){
+
 	quicConf := &quic.Config{
 		CreatePaths: true,
 	}
+
 	listener, err := quic.ListenAddr(addr, GenerateTLSConfig(), quicConf)
 	if err != nil{
 		fmt.Println("Error: ",err)
